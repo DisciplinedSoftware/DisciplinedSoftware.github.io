@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "State Pattern Revisited"
+date:   2024-01-15 20:32:00 -0500
+categories: Design pattern
+---
+#State Pattern 101
+Explain the GOF state pattern with an alarm clock example
+Explain the issue with the state creation, there seems to be an issue with the new/delete
+  I think there is an issue with multi-threading that cannot be fixed easily.
+    The issue will happen when the state change, where at one point there is 2 states that exist at the same time
+Explain the enum state pattern with an alarm clock
+Explain the issue with the enum proposition
+Add improvement with an abstract factory
+Maybe the enum map is a very good thing to handle the transition and the creation, while the states only handle the state execution
+Fix the multi-thread issue by separating the concerne of who does what.
