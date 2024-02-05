@@ -1,0 +1,69 @@
+---
+layout: post
+title:  "State Pattern Revisited"
+date:   2024-01-15 20:32:00 -0500
+categories: Design pattern
+---
+# State Pattern 101
+Explain the GOF state pattern with an alarm clock example
+Explain the issue with the state creation, there seems to be an issue with the new/delete
+  I think there is an issue with multi-threading that cannot be fixed easily.
+    The issue will happen when the state change, where at one point there is 2 states that exist at the same time
+Explain the enum state pattern with an alarm clock
+Explain the issue with the enum proposition
+Add improvement with an abstract factory
+Maybe the enum map is a very good thing to handle the transition and the creation, while the states only handle the state execution
+Fix the multi-thread issue by separating the concerne of who does what.
+
+State pattern can be applied when the behavior changes with the state of the object. In my case, the behavior is what happend when there is a new layer id, but also what happen when there is a onverrun or an underrun. 
+My case is more complete than the example in clean code principles and anti-patterns because the following example doesn't handle the transition, only the behavior. Maybe this is a good starting point.
+
+{% highlight C++ %}
+public interface UserStoryState {
+  Icon getIcon();
+}
+public class TodoUserStoryState implements UserStoryState {
+  public Icon getIcon() {
+    return new TodoIcon();
+  }
+}
+public class InDevelopmentUserStoryState implements UserStoryState {
+  public Icon getIcon() {
+    return new InDevelopmentIcon();
+  }
+}
+public class InVerificationUserStoryState implements UserStoryState {
+  public Icon getIcon() {
+    return new InVerificationIcon();
+  }
+}
+public class ReadyForReviewUserStoryState implements UserStoryState {
+  public Icon getIcon() {
+    return new ReadyForReviewIcon();
+  }
+}
+public class DoneUserStoryState implements UserStoryState {
+  public Icon getIcon() {
+    return new DoneIcon();
+  }
+}
+public class UserStory {
+  private String name;
+  private UserStoryState state = new TodoUserStoryState();
+  // Other properties...
+  public UserStory(final String name, ...) {
+    this.name = name;
+    // ...
+  }
+  public void setState(
+    final UserStoryState newState
+  ) {
+    state = newState;
+  }
+  public void render() {
+    final Icon icon = state.getIcon();
+    // Draw a UI element on screen representing
+    // the user story using the given 'icon'
+  }
+}
+{% endhighlight %}
