@@ -11,7 +11,7 @@ What to do when you want to add tests around code that lives in an executable pr
 # The Problem
 Consider an application where all the code resides in a single executable project.
 
-We are disciplined software developers and we want to add tests around our software before changing the behavior.
+As a disciplined software developers you want to add tests around to the code before changing the behavior.
 
 # A Simple Solution
 The first solution is to add tests using assertions at the beginning of the main.
