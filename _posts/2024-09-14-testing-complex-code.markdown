@@ -34,7 +34,7 @@ TODO: Write an article on how decoupling leverage reusability, flexibility, main
 
 TODO: Write an article on the difference between functional and object-oriented behaviour. 
 
-Sometime, a behaviour can requires a lot of dependencies. Those cases are sign that you need higher abstractions. A discussion with the domain experts can help you understand what are the right abstractions.
+Sometime, a behaviour can requires a lot of dependencies. Those cases are sign that you need higher abstractions. A discussion with the domain experts can help you understand what are the missing abstractions.
 
 Now we start implementing the code behind our test. Let start by making the code compile.
 
@@ -48,9 +48,9 @@ Now we make the test pass with little code as possible.
 
 ```
 
-Great! We now have a test that passes. Let assume that our new code is fully tested and it does everything that we want. With the new code, it is easy to cover all the corner cases of the new behaviour. Let plug it into the existing code. But first we will create a complex test case with all the boiler plate code to instantiate everything that is needed at least for one happy path and hopefully for one unhappy path if possible. Here for simplicity, we will only focus on achieiving one happy path.
+Great! We now have a test that passes. With the new code, it is easy to cover all the corner cases of the new behaviour. Let assume that our new code is fully tested and it does everything that we want. We now plug it into the existing code. But first we will create a complex test case with all the boiler plate code to instantiate everything that is needed at least for one happy path and hopefully for one unhappy path if possible. Here for simplicity, we will only focus on achieiving one happy path.
 
-The main goal of this test is not to validate the behaviour but to validate that the new behaviour is called and that its inputs and outputs are attached correctly to the existing code. This test will be hard to write, hard to maintain, fragile and probably flaky. At least you will not have many tests of this kind and they will tend to be eliminated over time as your code design will improve.
+The main goal of this test is not to validate the behaviour but to validate that the new behaviour is called and that its inputs and outputs are attached correctly to the existing code. This test will be hard to write, hard to maintain, fragile and probably flaky. At least you will not have many tests of this kind and they will tend to be eliminated over time as your code design improve.
 
 TODO: Write about the difference between code design and architecture.
 
@@ -60,7 +60,7 @@ Here is what the test could look like:
 
 ```
 
-Following this test, let add the new behaviour to the existing code. First, we plug the new behaviour in the existing code. and 
+Following this test, we plug the new behaviour in the existing code. As you might have realized already, the complex code initialization can be remove entirely with our repository.
 
 TODO: I am stuck here as I have no idea how to present the fact that I am using a value object / entity and I am not talking about the repository. 
 I could use an example with the functional part and then with the load/save part and afterward the real test.
