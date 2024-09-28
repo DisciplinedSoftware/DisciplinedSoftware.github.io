@@ -8,7 +8,7 @@ categories: Testing, DDD, Domain-Driven Design
 # The Idea
 
 # The Problem
-You have inherited a complex code base and you need to change a functionality. You find the place where you want to add the new code and you change the code to add the behavior. After testing manually, you want to add automated tests around your newly written code. This is where the problem starts. You realize that you need to instantiate a ton of boiler plate code that don't relate to simple behavior you want to validate.
+You have inherited a complex code base and you need to change a functionality. You find the place where you want to add the new code and you change the code to add the behavior. After testing manually, you want to add automated tests around your newly written code. This is where the problem starts. You realize that you need to instantiate a ton of boiler plate code that do not relate to simple behavior you want to validate. Even worst, it might just simply be impossible, like you need to force an error from a database or hardware.
 
 Here is an example of what it could look like:
 
