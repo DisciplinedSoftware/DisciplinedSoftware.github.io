@@ -44,7 +44,7 @@ int WinMain()
 This is a very simple way of testing, but it will only work when assertions are active, which by default are only active in debug. We could add assertions to the release configuration, but that will have an impact on the whole project and that's not what we want.
 
 # A Better Solution
-Instead of assertions, we want to use a test framework that will allow us to log test results. We will go with _µt_ since it's a macro-free testing framework (https://github.com/boost-ext/ut).
+Instead of assertions, we want to use a test framework that will allow us to log test results. We will go with _µt_ since it's a macro-free testing framework ([https://github.com/boost-ext/ut](https://github.com/boost-ext/ut)).
 
 ```cpp
 #include <boost/ut.hpp> // https://github.com/boost-ext/ut
