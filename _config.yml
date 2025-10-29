@@ -24,7 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   This blog is about about coding in a structured and disciplined way.
   The goal of this blog is to propose systematic solution to problems.
 #baseurl: "/blog" # the subpath of your site, e.g. /blog
-url: "https://blog.disciplinedsoftware.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://disciplinedsoftware.com" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: DisciplinedSoftware
 github_username:  DisciplinedSoftware
 
